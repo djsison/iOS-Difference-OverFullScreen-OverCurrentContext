@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Over Full Screen-->
+        <scene sceneID="hNz-n2-bh7">
+            <objects>
+                <viewController id="9pv-A4-QxB" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Ia1-K6-d13"/>
+                        <viewControllerLayoutGuide type="bottom" id="4ug-Mw-9AY"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="tsR-hK-woN">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="A5M-7J-77L">
+                                <rect key="frame" x="8" y="84" width="584" height="33.5"/>
+                                <string key="text">Child view below is loaded by OverFullScreenChildViewController.
+The Orange view is the container view of the OverFullScreenChildViewController.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JWW-yd-TId">
+                                <rect key="frame" x="70" y="217.5" width="460" height="233.5"/>
+                                <connections>
+                                    <segue destination="B90-Ts-bqo" kind="embed" id="QHn-J1-ZrI"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="A5M-7J-77L" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leading" constant="8" id="3lC-ha-6na"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="JWW-yd-TId" secondAttribute="trailing" constant="50" id="NkB-4y-bfW"/>
+                            <constraint firstItem="JWW-yd-TId" firstAttribute="top" secondItem="A5M-7J-77L" secondAttribute="bottom" constant="100" id="Vd9-cR-RlF"/>
+                            <constraint firstItem="A5M-7J-77L" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" constant="20" id="c9N-0P-e3q"/>
+                            <constraint firstItem="JWW-yd-TId" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leadingMargin" constant="50" id="lbN-4p-HsG"/>
+                            <constraint firstAttribute="trailing" secondItem="A5M-7J-77L" secondAttribute="trailing" constant="8" id="pcE-fQ-vKo"/>
+                            <constraint firstItem="4ug-Mw-9AY" firstAttribute="top" secondItem="JWW-yd-TId" secondAttribute="bottom" constant="100" id="rmY-Pr-h2x"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Over Full Screen" id="t9M-Qs-7yI"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1562" y="-320"/>
+        </scene>
+        <!--Over Full Screen Child View Controller-->
+        <scene sceneID="eOc-oI-oe7">
+            <objects>
+                <viewController id="B90-Ts-bqo" customClass="OverFullScreenChildViewController" customModule="iOS_Difference_OverFullScreen_OverCurrentContext" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="YY4-qE-W2C"/>
+                        <viewControllerLayoutGuide type="bottom" id="sRL-Eh-P43"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="t34-ey-Wfv">
+                        <rect key="frame" x="0.0" y="0.0" width="460" height="233.5"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SJP-oL-PHl">
+                                <rect key="frame" x="8" y="102" width="444" height="30"/>
+                                <state key="normal" title="Show Modal Screen"/>
+                                <connections>
+                                    <action selector="buttonTapped:" destination="B90-Ts-bqo" eventType="touchUpInside" id="WhB-g2-Nue"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="SJP-oL-PHl" firstAttribute="leading" secondItem="t34-ey-Wfv" secondAttribute="leading" constant="8" id="0P3-gI-LOB"/>
+                            <constraint firstItem="SJP-oL-PHl" firstAttribute="centerY" secondItem="t34-ey-Wfv" secondAttribute="centerY" id="0bL-Q3-kKd"/>
+                            <constraint firstAttribute="trailing" secondItem="SJP-oL-PHl" secondAttribute="trailing" constant="8" id="5gl-Gj-Kll"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LVw-7S-lbD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2305" y="-320"/>
+        </scene>
+        <!--Modal View Controller-->
+        <scene sceneID="AZu-Ce-5P5">
+            <objects>
+                <viewController storyboardIdentifier="Modal" id="Y7A-lP-GvB" customClass="ModalViewController" customModule="iOS_Difference_OverFullScreen_OverCurrentContext" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="uuE-sh-jF2"/>
+                        <viewControllerLayoutGuide type="bottom" id="2Wz-4R-Q1J"/>
+                    </layoutGuides>
+                    <view key="view" alpha="0.55000000000000004" contentMode="scaleToFill" id="ZBc-cM-E39">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This Label is from the Modal Screen" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h4G-8c-A5A">
+                                <rect key="frame" x="8" y="290" width="584" height="20.5"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xdl-hc-5Zv">
+                                <rect key="frame" x="8" y="318" width="584" height="30"/>
+                                <state key="normal" title="Close Screen">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="closeButtonTapped:" destination="Y7A-lP-GvB" eventType="touchUpInside" id="Jbo-WX-HcF"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="h4G-8c-A5A" firstAttribute="centerY" secondItem="ZBc-cM-E39" secondAttribute="centerY" id="7kJ-7i-7Sr"/>
+                            <constraint firstAttribute="trailing" secondItem="h4G-8c-A5A" secondAttribute="trailing" constant="8" id="Arv-QB-J2M"/>
+                            <constraint firstItem="xdl-hc-5Zv" firstAttribute="trailing" secondItem="h4G-8c-A5A" secondAttribute="trailing" id="ba2-oX-PsX"/>
+                            <constraint firstItem="xdl-hc-5Zv" firstAttribute="top" secondItem="h4G-8c-A5A" secondAttribute="bottom" constant="8" id="h7Q-fd-g7a"/>
+                            <constraint firstItem="xdl-hc-5Zv" firstAttribute="leading" secondItem="h4G-8c-A5A" secondAttribute="leading" id="oDc-6S-OJa"/>
+                            <constraint firstItem="h4G-8c-A5A" firstAttribute="leading" secondItem="ZBc-cM-E39" secondAttribute="leading" constant="8" id="sbE-Sd-23G"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Iio-D5-fPi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2982" y="-14"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="yl2-sM-qoP">
+            <objects>
+                <tabBarController id="49e-Tb-3d3" sceneMemberID="viewController">
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="W28-zg-YXA">
+                        <rect key="frame" x="0.0" y="975" width="768" height="49"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="BZ6-8n-Qq7" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
+                        <segue destination="NJc-sv-dEr" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="0.0" y="0.0"/>
+        </scene>
+        <!--Over Full Screen-->
+        <scene sceneID="q4D-9h-RpI">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="BZ6-8n-Qq7" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Over Full Screen" image="first" id="acW-dT-cKf"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="GBQ-8E-2iV">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="9pv-A4-QxB" kind="relationship" relationship="rootViewController" id="yuO-EW-aK5"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Lvn-t2-eel" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="750" y="-320"/>
+        </scene>
+        <!--Over Current Context-->
+        <scene sceneID="q2F-n1-X3g">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="NJc-sv-dEr" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Over Current Context" image="second" id="cPa-gy-q4n"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="9a5-m9-wy0">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="hjm-QS-6ll" kind="relationship" relationship="rootViewController" id="QrJ-Hk-uT8"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TpQ-vR-hm6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="750" y="360"/>
+        </scene>
+        <!--Over Current Context-->
+        <scene sceneID="3uW-Gs-ndh">
+            <objects>
+                <viewController id="hjm-QS-6ll" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="4EH-Wz-h9N"/>
+                        <viewControllerLayoutGuide type="bottom" id="P5k-iS-RMX"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="tGS-0a-zx7">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="46z-3f-fbp">
+                                <rect key="frame" x="8" y="84" width="584" height="33.5"/>
+                                <string key="text">Child view below is loaded by OverCurrentContextChildViewController.
+The Orange view is the container view of the OverCurrentContextChildViewController.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NJ5-Oh-8NU">
+                                <rect key="frame" x="70" y="217.5" width="460" height="233.5"/>
+                                <connections>
+                                    <segue destination="09r-Bz-Gt0" kind="embed" id="NoC-9i-uJ7"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="NJ5-Oh-8NU" firstAttribute="top" secondItem="46z-3f-fbp" secondAttribute="bottom" constant="100" id="4fk-QO-Kya"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="NJ5-Oh-8NU" secondAttribute="trailing" constant="50" id="8mN-ey-04g"/>
+                            <constraint firstItem="46z-3f-fbp" firstAttribute="top" secondItem="4EH-Wz-h9N" secondAttribute="bottom" constant="20" id="Ael-lE-cHe"/>
+                            <constraint firstAttribute="trailing" secondItem="46z-3f-fbp" secondAttribute="trailing" constant="8" id="Fkg-q7-vQJ"/>
+                            <constraint firstItem="P5k-iS-RMX" firstAttribute="top" secondItem="NJ5-Oh-8NU" secondAttribute="bottom" constant="100" id="YOi-cP-soK"/>
+                            <constraint firstItem="46z-3f-fbp" firstAttribute="leading" secondItem="tGS-0a-zx7" secondAttribute="leading" constant="8" id="mZz-oJ-hSy"/>
+                            <constraint firstItem="NJ5-Oh-8NU" firstAttribute="leading" secondItem="tGS-0a-zx7" secondAttribute="leadingMargin" constant="50" id="xnI-ij-tKZ"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Over Current Context" id="c9l-aI-6D0"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ezk-Q3-hRS" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1562" y="360"/>
+        </scene>
+        <!--Over Current Context Child View Controller-->
+        <scene sceneID="GiR-3E-Yay">
+            <objects>
+                <viewController id="09r-Bz-Gt0" customClass="OverCurrentContextChildViewController" customModule="iOS_Difference_OverFullScreen_OverCurrentContext" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Rfj-KA-3hD"/>
+                        <viewControllerLayoutGuide type="bottom" id="7fW-dR-njq"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="lSm-WA-5Lk">
+                        <rect key="frame" x="0.0" y="0.0" width="460" height="233.5"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HSD-BV-aem">
+                                <rect key="frame" x="8" y="102" width="444" height="30"/>
+                                <state key="normal" title="Show Modal Screen"/>
+                                <connections>
+                                    <action selector="buttonTapped:" destination="09r-Bz-Gt0" eventType="touchUpInside" id="MOi-Ew-fEZ"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="HSD-BV-aem" firstAttribute="leading" secondItem="lSm-WA-5Lk" secondAttribute="leading" constant="8" id="O9Z-6q-OjE"/>
+                            <constraint firstItem="HSD-BV-aem" firstAttribute="centerY" secondItem="lSm-WA-5Lk" secondAttribute="centerY" id="lUO-dX-6SC"/>
+                            <constraint firstAttribute="trailing" secondItem="HSD-BV-aem" secondAttribute="trailing" constant="8" id="oOj-Uk-Rjv"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="agC-6o-pE5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2305" y="359.75"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="first" width="30" height="30"/>
+        <image name="second" width="30" height="30"/>
+    </resources>
+</document>
